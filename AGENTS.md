@@ -1,239 +1,66 @@
-# AI開発支援ルール
-
-## 1. このリポジトリの目的
-
-このリポジトリは、WordPressサイトの現在の実装をAIが把握し、
-実装要件に対して適切な変更方法を提案するための参照用リポジトリです。
-
-AIが直接本番環境を変更することを目的としていません。
-
----
-
-## 2. 現在の開発・公開フロー
-
-基本的な開発フローは以下です。
-
-1. 人がステージング環境を修正する
-2. WordPress管理画面またはFTP/SFTPを使用する
-3. ステージング環境で動作確認する
-4. 既存の定時反映の仕組みによって本番環境へ反映される
-
-GitHubは、AIが現在のソースコードを把握するための参照用として使用します。
-
-既存のステージング→本番の定時反映フローは変更しません。
-
-明示的な依頼がない限り、GitHubからステージング・本番環境への自動デプロイは提案しないでください。
-
----
-
-## 3. AIが実装提案する際の基本ルール
-
-実装方法を提案する前に、必ず現在のコードを調査してください。
-
-以下の順序で確認します。
-
-1. 要件を整理する
-2. 関連する既存コードを検索する
-3. PHP・HTML・CSS・JavaScriptの関連箇所を特定する
-4. 既存機能を流用できるか確認する
-5. WordPressのウィジェット・ショートコード・テンプレートも確認する
-6. PC/SP両方への影響を確認する
-7. CTA・GA4・GTMへの影響を確認する
-8. 変更対象ファイルを特定する
-9. 人がステージング環境で修正するための手順を提示する
-
-既存実装を流用できる場合、新しい仕組みを重複して作らないでください。
-
----
-
-## 4. WordPress調査対象
-
-必要に応じて以下を確認してください。
-
-- functions.php
-- header.php
-- header-magazine.php
-- footer.php
-- footer-magazine.php
-- single.php
-- 固定ページテンプレート
-- template-parts/
-- css/
-- css_magazine/
-- js/
-- ウィジェットエリア
-- ショートコード
-- wp_enqueue_script
-- wp_enqueue_style
-
-1ファイルだけを見て判断せず、関連ファイルを横断して確認してください。
-
----
-
-## 5. MAGAZINEについて
-
-MAGAZINEと本体サイトでは、一部テンプレート・CSSが分離されています。
-
-MAGAZINEの変更では特に以下を確認してください。
-
-- header-magazine.php
-- footer-magazine.php
-- single.php
-- page-magazine系テンプレート
-- template-parts/
-- css_magazine/
-- js/
-
-MAGAZINEだけの変更で本体サイトに不要な影響を与えないようにしてください。
-
----
-
-## 6. CTA変更時のルール
-
-CTAに関する変更の場合、必ず以下を確認してください。
-
-1. CTAがどこで出力されているか
-2. PHPによる出力か
-3. WordPressウィジェットによる出力か
-4. ショートコードによる出力か
-5. 関連CSS
-6. 関連JavaScript
-7. href
-8. class
-9. id
-10. DOM構造
-
-CTAのHTMLやリンク先がWordPress管理画面のウィジェットに保存されていてGitHubに存在しない場合は、
-
-「GitHubだけでは確認できないためWordPress管理画面で確認が必要」
-
-と明記してください。
-
----
-
-## 7. GA4・GTMへの影響確認
-
-CTA、リンク、ボタン、フォーム等を変更する場合はGA4/GTMへの影響を確認してください。
-
-特に以下の変更を確認します。
-
-- href
-- class
-- id
-- data属性
-- DOM構造
-- ボタン表示条件
-- JavaScriptイベント
-
-これらを変更するとGTMトリガーに影響する可能性があります。
-
-GTM管理画面側の設定がGitHubに存在しない場合は推測せず、
-
-「GTM側の確認が必要」
-
-と明記してください。
-
----
-
-## 8. バックアップファイル
-
-以下のようなバックアップファイルは現行実装として扱わないでください。
-
-- `.___bak`
-- `.___bak*`
-- `.bak`
-- `.backup`
-
-現行ファイルを優先してください。
-
----
-
-## 9. 実装提案の出力形式
-
-実装要件を受け取った場合、原則として以下の形式で回答してください。
-
-### 現在の実装
-
-現在どのような仕組みになっているか。
-
-### 関連ファイル
-
-変更に関係するファイルを一覧化する。
-
-### 既存機能の流用
-
-既存コード・CSS・JS・ウィジェット等を流用できるか。
-
-### 推奨実装方法
-
-最も影響範囲が小さい方法を提示する。
-
-### 変更対象
-
-実際に変更するファイル・WordPress設定を明示する。
-
-### PHP / HTML
-
-必要な変更内容を示す。
-
-### CSS
-
-必要な変更内容を示す。
-
-### JavaScript
-
-必要な変更内容を示す。
-
-### WordPress管理画面
-
-管理画面側で必要な作業があれば示す。
-
-### 影響範囲
-
-既存ページ・機能への影響を示す。
-
-### PC確認項目
-
-PCで確認すべき項目を示す。
-
-### SP確認項目
-
-スマートフォンで確認すべき項目を示す。
-
-### GA4 / GTM確認項目
-
-計測への影響がある場合に確認項目を示す。
-
----
-
-## 10. 実装方針
-
-原則として以下を優先します。
-
-既存実装の流用
-↓
-既存コードへの最小限の変更
-↓
-新規コード追加
-↓
-大規模な構造変更
-
-不要なリファクタリングは行わないでください。
-
-実装要件と直接関係のないファイルは変更対象にしないでください。
-
----
-
-## 11. AIの役割
-
-AIの主な役割は以下です。
-
-- 現行コードの調査
-- 実装箇所の特定
-- 既存実装の流用判断
-- 実装方法の提案
-- 修正コードの作成
-- 影響範囲の確認
-- テスト項目の作成
-
-実際のWordPress・FTP/SFTP上のコード変更は人が行います。
+# AI Development Rules
+
+## Purpose
+
+This repository is used by AI to analyze the current WordPress implementation
+and prepare implementation instructions for human developers.
+
+## Development Flow
+
+- Changes are made manually by humans on the staging environment.
+- Changes are performed through WordPress admin or FTP/SFTP.
+- GitHub is a reference mirror of the latest staging source.
+- Do not propose GitHub-to-production deployment.
+- Production deployment uses the existing scheduled deployment process.
+
+## Required Analysis Before Any Proposal
+
+Before suggesting any implementation:
+
+1. Search the current repository first.
+2. Identify all related PHP, HTML, JavaScript and CSS files.
+3. Check whether an existing implementation already provides similar behavior.
+4. Prefer reusing existing classes, functions, components and widgets.
+5. Identify whether WordPress widgets or admin-side settings are involved.
+6. Check both desktop and mobile behavior.
+7. Check whether GA4/GTM tracking may be affected.
+8. Do not modify unrelated functionality.
+9. Ignore backup files such as *.___bak* when analyzing the current implementation.
+
+## Required Output
+
+For every implementation request, return:
+
+1. Current implementation
+2. Related files
+3. Existing reusable implementation
+4. Proposed implementation
+5. Files to modify
+6. WordPress admin changes, if any
+7. PHP/HTML changes
+8. JavaScript changes
+9. CSS changes
+10. Potential side effects
+11. Desktop test checklist
+12. Mobile test checklist
+13. GA4/GTM impact and test checklist
+
+## Important WordPress Rules
+
+- Magazine pages use magazine-specific templates and styles where applicable.
+- Do not assume CTA markup is in PHP; check widget areas first.
+- Check functions.php for enqueue conditions before proposing new CSS or JS.
+- Do not create duplicate JS or CSS if an existing implementation can be extended.
+- If a change affects selectors, links, classes or IDs used by GTM, explicitly warn about tracking impact.
+
+## Deployment
+
+The AI does not deploy code.
+
+The human developer:
+1. Reviews the implementation instructions.
+2. Modifies the staging site manually.
+3. Tests the staging site.
+4. Syncs the updated staging source back to GitHub.
+
+Production deployment continues through the existing scheduled deployment process.

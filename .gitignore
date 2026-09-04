@@ -28,3 +28,8 @@ wp-config.php
 *.___bak*
 *.bak
 *.backup
+
+# Staging backup files
+*.___bak*
+*.bak
+*.backup
