@@ -1,0 +1,4 @@
+@charset "UTF-8";
+
+@import url("design.css") print, screen and (min-width: 769px);
+@import url("design_smp.css") screen and (max-width: 768px);

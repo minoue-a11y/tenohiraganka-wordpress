@@ -1,0 +1,75 @@
+/*!
+Theme Name: hmr_tenohira_eye2025
+Theme URI: 
+Author: HMR
+Author URI: 
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: hmr_s_base-gtn
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
+
+/* 幅広ブロックに幅広コンテンツ幅を指定 
+ * 幅広のサイズは、1380oxに固定とする。 
+ * メディアクエリで、カスタム変数が使えないから、--wp--style--global--wide-size 
+ */
+@media screen and (min-width: 1380px) {
+  #contents-container .alignwide {
+    width: 1380px;
+    margin-left: 50%;
+    transform: translateX(-690px);
+  }
+}
+
+
+/* 全幅ブロックに全幅コンテンツ幅を指定 
+ * 100vwだと、スクロールバーの分隠れてしまうので、少し小さくする
+ */
+#main-contents>*.alignfull {
+  width: 98vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+/* グループブロックの中のブロックを全幅に対応させる。
+ * 「コンテント幅を使用するインナーブロック」を有効にするため、
+ * max-widthはデフォルトにする
+ */
+body #main-contents .is-layout-constrained> :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  /* width: 100%; */
+
+  /*  max-width: none;*/
+}
+
+/* 画像　中央・左・右寄せ */
+body #main-contents figure.alignleft {
+  float: left;
+  margin-inline-start: 0;
+  margin-inline-end: 2em;
+}
+
+body #main-contents figure.alignright {
+  float: right;
+  margin-inline-start: 2em;
+  margin-inline-end: 0;
+}
+
+body #main-contents figure.aligncenter:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+  max-width: 1088px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* 余白調整 */
+/* .entry-content {
+  padding-left: var(--wp--custom--gutter);
+  padding-right: var(--wp--custom--gutter);
+}
+
+.entry-content>*.alignfull {
+  margin-left: calc(var(--wp--custom--gutter) * -1);
+  margin-right: calc(var(--wp--custom--gutter) * -1);
+}

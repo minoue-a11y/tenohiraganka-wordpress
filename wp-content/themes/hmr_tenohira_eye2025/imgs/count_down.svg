@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-20 -20 280 280" width="320" height="320">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: #5076d2;
+            }
+
+            .cls-2 {
+                fill: #4a6fc9;
+            }
+
+            .cls-3 {
+                 fill: #fff;
+                 <!-- stroke: #567ddc; -->
+            }
+
+            .cls-4 {
+                fill: #fff;
+            }
+
+            .cls-5 {
+                fill: #3556a9;
+            }
+
+            .cls-6 {
+                fill: #2b4b99;
+            }
+
+            .cls-4 {
+                font-family: YuGothic-Bold, 'Yu Gothic';
+                font-size: 80px;
+                font-weight: 700;
+            }
+
+            .cls-7 {
+                fill: #4eb8f9;
+            }
+
+            .cls-8 {
+                fill: #4569c1;
+            }
+
+            .cls-9 {
+                fill: #2f66ed;
+            }
+
+            .cls-10 {
+                fill: #214089;
+            }
+
+            .cls-11 {
+                fill: #3a5cb1;
+            }
+
+            .cls-12 {
+                fill: #3f62b8;
+            }
+
+            .cls-13 {
+                fill: #3050a1;
+            }
+
+            .cls-14 {
+                fill: #254590;
+            }
+
+            .cls-15 {
+                fill: #19367d;
+            }
+
+            .cls-16 {
+                fill: #567ddc;
+            }
+        </style>
+
+        <!-- 扇形マスクを追加 -->
+        <clipPath id="pie-reveal-mask">
+            <path id="pie-mask-path" d="M 120 120 L 120 16 A 104 104 0 0 1 120 16 Z" />
+        </clipPath>
+    </defs>
+
+    <g id="bg_white">
+        <circle class="cls-3" cx="120" cy="120" r="120" />
+    </g>
+
+
+    <g id="bg_grade_btm">
+        <g>
+            <path class="cls-15" d="M172.01,29.92c-15.3-8.85-33.06-13.92-52.01-13.92v104l52.01-90.08Z" />
+            <path class="cls-1" d="M67.99,29.92c-15.78,9.13-28.94,22.29-38.07,38.07l90.08,52.01L67.99,29.92Z" />
+            <path class="cls-2" d="M29.92,67.99c-8.85,15.3-13.92,33.06-13.92,52.01h104L29.92,67.99Z" />
+            <path class="cls-14" d="M224,120c0-18.95-5.07-36.71-13.92-52.01l-90.08,52.01h104Z" />
+            <path class="cls-10" d="M210.08,67.99c-9.13-15.78-22.29-28.94-38.07-38.07l-52.01,90.08,90.08-52.01Z" />
+            <path class="cls-16" d="M120,16c-18.95,0-36.71,5.07-52.01,13.92l52.01,90.08V16Z" />
+            <path class="cls-13" d="M172.01,210.08c15.78-9.13,28.94-22.29,38.07-38.07l-90.08-52.01,52.01,90.08Z" />
+            <path class="cls-5" d="M120,224c18.95,0,36.71-5.07,52.01-13.92l-52.01-90.08v104Z" />
+            <path class="cls-8" d="M16,120c0,18.95,5.07,36.71,13.92,52.01l90.08-52.01H16Z" />
+            <path class="cls-6" d="M120,120l90.08,52.01c8.85-15.3,13.92-33.06,13.92-52.01h-104Z" />
+            <path class="cls-11" d="M67.99,210.08c15.3,8.85,33.06,13.92,52.01,13.92v-104l-52.01,90.08Z" />
+            <path class="cls-12" d="M29.92,172.01c9.13,15.78,22.29,28.94,38.07,38.07l52.01-90.08-90.08,52.01Z" />
+        </g>
+    </g>
+    <g id="bg_grade">
+        <g>
+            <path class="cls-15" d="M172.01,29.92c-15.3-8.85-33.06-13.92-52.01-13.92v104l52.01-90.08Z" />
+            <path class="cls-1" d="M67.99,29.92c-15.78,9.13-28.94,22.29-38.07,38.07l90.08,52.01L67.99,29.92Z" />
+            <path class="cls-2" d="M29.92,67.99c-8.85,15.3-13.92,33.06-13.92,52.01h104L29.92,67.99Z" />
+            <path class="cls-14" d="M224,120c0-18.95-5.07-36.71-13.92-52.01l-90.08,52.01h104Z" />
+            <path class="cls-10" d="M210.08,67.99c-9.13-15.78-22.29-28.94-38.07-38.07l-52.01,90.08,90.08-52.01Z" />
+            <path class="cls-16" d="M120,16c-18.95,0-36.71,5.07-52.01,13.92l52.01,90.08V16Z" />
+            <path class="cls-13" d="M172.01,210.08c15.78-9.13,28.94-22.29,38.07-38.07l-90.08-52.01,52.01,90.08Z" />
+            <path class="cls-5" d="M120,224c18.95,0,36.71-5.07,52.01-13.92l-52.01-90.08v104Z" />
+            <path class="cls-8" d="M16,120c0,18.95,5.07,36.71,13.92,52.01l90.08-52.01H16Z" />
+            <path class="cls-6" d="M120,120l90.08,52.01c8.85-15.3,13.92-33.06,13.92-52.01h-104Z" />
+            <path class="cls-11" d="M67.99,210.08c15.3,8.85,33.06,13.92,52.01,13.92v-104l-52.01,90.08Z" />
+            <path class="cls-12" d="M29.92,172.01c9.13,15.78,22.29,28.94,38.07,38.07l52.01-90.08-90.08,52.01Z" />
+        </g>
+    </g>
+
+    <!-- マスクを適用した bg_color_mask -->
+    <g id="bg_color_mask" clip-path="url(#pie-reveal-mask)">
+        <circle class="cls-9" cx="120" cy="120" r="104" />
+    </g>
+
+    <!-- 秒数をカウントダウンする数字 -->
+    <g id="num_circle">
+
+        <g class="count_num0 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num0.png" />
+        </g>
+        <g class="count_num1 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num1.png" />
+        </g>
+        <g class="count_num2 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num2.png" />
+        </g>
+        <g class="count_num3 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num3.png" />
+        </g>
+        <g class="count_num4 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num4.png" />
+        </g>
+        <g class="count_num5 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num5.png" />
+        </g>
+        <g class="count_num6 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num6.png" />
+        </g>
+        <g class="count_num7 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num7.png" />
+        </g>
+        <g class="count_num8 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num8.png" />
+        </g>
+        <g class="count_num9 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num9.png" />
+        </g>
+        <g class="count_num10 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num10.png" />
+        </g>
+        <g class="count_num11 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num11.png" />
+        </g>
+        <g class="count_num12 cnt_num">
+            <circle class="cls-7" cx="120" cy="120" r="75" />
+            <image width="95" height="95" transform="translate(72.5 68.96)" xlink:href="/wp-content/themes/hmr_tenohira_eye2025/imgs/num12.png" />
+        </g>
+    </g>
+
+    <!-- 回転する円 -->
+    <g id="rotate_point">
+        <circle class="cls-9" cx="120" cy="0" r="11" />
+    </g>
+</svg>

@@ -1,0 +1,163 @@
+.wp-block {
+  box-sizing: border-box;
+}
+
+
+/* 余白調整 */
+
+body {
+  padding-left: var(--wp--custom--gutter);
+  padding-right: var(--wp--custom--gutter);
+}
+
+.alignfull {
+  margin-left: calc(var(--wp--custom--gutter) * -1);
+  margin-right: calc(var(--wp--custom--gutter) * -1);
+}
+
+.float_clear {
+  clear: both;
+}
+
+
+/* 個別のマージン設定 */
+.is-layout-flow>*+h2.wp-block-heading {
+  /*  margin-top: 3rem;*/
+}
+
+h1 {
+  font-size: clamp(1.375rem, 1.1116412214rem + 1.0178117048vw, 1.875rem);
+  font-weight: bold;
+
+  line-height: 1.4;
+}
+
+h2 {
+  color: #2f66ed;
+  font-size: clamp(1.375rem, 1.1116412214rem + 1.0178117048vw, 1.875rem);
+  font-weight: bold;
+
+  line-height: 1.4;
+  position: relative;
+}
+
+h3 {
+  text-align: left;
+  color: #2f66ed;
+  font-size: clamp(1.0625rem, 0.8979007634rem + 0.6361323155vw, 1.375rem);
+  font-weight: bold;
+
+  line-height: 1.4;
+  padding-bottom: 8px;
+  border-bottom: 1px dotted #2f66ed;
+}
+
+h3.h3_t2 {
+  color: #2f66ed;
+  font-size: clamp(1.0625rem, 0.8979007634rem + 0.6361323155vw, 1.375rem);
+  font-weight: bold;
+  margin: 2em 0 1em;
+  line-height: 1.4;
+  padding-left: 0;
+  padding-bottom: 8px;
+  border-bottom: none;
+}
+
+h4 {
+  color: #2f66ed;
+  font-size: clamp(1rem, 0.901240458rem + 0.3816793893vw, 1.1875rem);
+  font-weight: bold;
+
+  padding: 0 0 0 14px;
+  line-height: 1.4;
+  position: relative;
+}
+
+h4:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 5%;
+  width: 5px;
+  height: 90%;
+  background-color: #2f66ed;
+  border-radius: 20px;
+}
+
+h5 {
+  color: #2f66ed;
+  font-size: clamp(0.9375rem, 0.8716603053rem + 0.2544529262vw, 1.0625rem);
+  font-weight: bold;
+
+  padding-left: 0;
+  line-height: 1.4;
+  position: relative;
+}
+
+h5:before {
+  content: none;
+}
+
+h6 {
+  color: #2f66ed;
+  font-size: clamp(0.9375rem, 0.9045801527rem + 0.1272264631vw, 1rem);
+  font-weight: bold;
+
+  line-height: 1.4;
+}
+
+.blog_cta1 {
+  margin: 2em 0;
+  padding: 1.25em 1.5em;
+  background-color: #fff;
+  border: 1px solid #d1ddfb;
+}
+
+.blog_cta1 h4 {
+  font-size: clamp(1.25rem, 0.9208015267rem + 1.272264631vw, 1.875rem);
+  font-weight: bold;
+
+  border: none;
+  margin: 0.75em 0 0.75em;
+  padding: 0 0 0 70px;
+  position: relative;
+}
+
+.blog_cta1 h4:before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  width: 48px;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: auto 52px;
+
+}
+
+.blog_cta1 .cta_link a {
+  font-size: clamp(1rem, 0.802480916rem + 0.7633587786vw, 1.375rem);
+  font-weight: bold;
+  padding: 1em;
+  text-align: center;
+  display: block;
+  background-color: #9db5f1;
+  border-radius: 10px;
+}
+
+.blog_cta1 .cta_link a:hover {
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+.blog_kanshusha {
+  padding: 1.25em 1.5em;
+  border: 1px solid #d1ddfb;
+}
+
+.faq_container {
+  border: 1px solid #ccc;
+  padding: 1em;
+  margin-bottom: 0.5em;
+}

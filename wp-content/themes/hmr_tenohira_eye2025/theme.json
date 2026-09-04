@@ -1,0 +1,172 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 2,
+    "settings": {
+        "layout": {
+
+        },
+        "custom": {
+            "font-size": {
+                "huge": "clamp(1.1875rem, 0.9829545455rem + 1.0227272727vw, 1.75rem)",
+                "gigantic": "clamp(1.375rem, 1.1931818182rem + 0.9090909091vw, 1.875rem)"
+            },
+            "color": {
+				"gray-light": "#cccccc",
+				"gray": "#999999",
+				"gray-dark": "#666666"
+			},
+            "gutter": "1rem"
+        },
+        "spacing": {
+
+            "margin": true,
+            "padding": true
+        },
+        "typography": {
+            "lineHeight": true,
+            "letterSpacing": false,
+            "textDecoration": false,
+            "textTransform": false,
+            "dropCap": false,
+            "fontStyle": false,
+
+            "fluid": true,
+            "fontSizes": [
+                {
+                    "fluid": {
+                        "min": "0.75rem",
+                        "max": "0.875rem"
+                    },
+                    "size": "0.875rem",
+                    "slug": "small"
+                },
+                {
+                    "fluid": {
+                        "min": "0.875rem",
+                        "max": "1rem"
+                    },
+                    "size": "1rem",
+                    "slug": "medium"
+                },
+                {
+                    "fluid": {
+                        "min": "1rem",
+                        "max": "1.125rem"
+                    },
+                    "size": "1.125rem",
+                    "slug": "large"
+                },
+                {
+                    "fluid": {
+                        "min": "1.125rem",
+                        "max": "1.5rem"
+                    },
+                    "size": "1.5rem",
+                    "slug": "x-large"
+                },
+                {
+                    "fluid": {
+                        "min": "1.375rem",
+                        "max": "1.75rem"
+                    },
+                    "size": "1.75rem",
+                    "slug": "xx-large"
+                }
+            ],
+            "fontFamilies": [
+				{
+					"slug": "system-font",
+					"name": "System Font",
+					"fontFamily": "\"游ゴシック体\", YuGothic, \"游ゴシック Medium\", \"Yu Gothic Medium\", \"游ゴシック\", \"Yu Gothic\",\"ヒラギノ角ゴ ProN W3\", Hiragino Kaku Gothic ProN, Arial, \"メイリオ\", Meiryo, sans-serif"
+				}
+			]
+        },
+        "color": {
+
+			"palette": [
+				{
+					"color": "#404040",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#ffffff",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#2f66ed",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "#ffe7cf",
+					"name": "Secondary",
+					"slug": "secondary"
+				},
+				{
+					"color": "#ff8c00",
+					"name": "Tertiary",
+					"slug": "tertiary"
+				}
+				,
+				{
+					"color": "#e50011",
+					"name": "Quaternary",
+					"slug": "quaternary"
+				}
+			]
+		},
+        "border": {
+            "color": true,
+            "radius": true,
+            "style": true,
+            "width": true
+        }
+    },
+    "styles": {
+        "typography": {
+            "fontSize": "var(--wp--preset--font-size--medium)",
+            "fontFamily": "var(--wp--preset--font-family--system-font)"
+
+        },
+        "elements": {
+            "h1": {
+                "typography": {
+                    "fontSize": "var(--wp--custom--font-size--gigantic)",
+                    "fontWeight": "bold"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "var(--wp--custom--font-size--huge)",
+                    "fontWeight": "bold"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--x-large)",
+                    "fontWeight": "bold"
+                }
+            },
+            "h4": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--large)",
+                    "fontWeight": "bold"
+                }
+            },
+            "h5": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--medium)",
+                    "fontWeight": "bold"
+                }
+            },
+            "h6": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--medium)",
+                    "fontWeight": "bold"
+                }
+            }
+        }
+    }
+}
