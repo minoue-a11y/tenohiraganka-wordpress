@@ -22,3 +22,9 @@ node_modules/
 .env
 .env.*
 wp-config.php
+
+# Backup files
+*.___bak
+*.___bak*
+*.bak
+*.backup
