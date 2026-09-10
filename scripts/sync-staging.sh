@@ -23,3 +23,13 @@ echo "=== Git status ==="
 cd "$HOME/Documents/tenohiraganka-wordpress"
 git status
 
+echo
+echo "=== Theme change check ==="
+
+if git diff --quiet -- wp-content/themes/hmr_tenohira_eye2025; then
+    echo "テーマに変更はありません。"
+else
+    echo "ステージングのテーマに変更があります。"
+    echo
+    git status --short -- wp-content/themes/hmr_tenohira_eye2025
+fi
