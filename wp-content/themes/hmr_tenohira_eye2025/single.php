@@ -57,14 +57,22 @@ get_header('magazine');
 					</div>
 
 
-					<?php
-					the_content();
+<?php
+the_content();
 
-					// wp_link_pages( array(
-					// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hmrhmr_s_base_gtn_base-gtn' ),
-					// 	'after'  => '</div>',
-					// ) );
-					?>
+/**
+ * マガジン記事
+ * 本文・下部CTAの後に「あわせて読みたい記事」を表示
+ */
+get_template_part(
+	'template-parts/magazine_related_posts'
+);
+
+// wp_link_pages( array(
+// 	'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hmrhmr_s_base_gtn_base-gtn' ),
+// 	'after'  => '</div>',
+// ) );
+?>
 
 				<?php
 				endwhile; // End of the loop.
@@ -80,12 +88,6 @@ get_header('magazine');
 						?>
 					</div>
 					<div class="sht_clip_snn_btns">
-						<div class="sht_clip_btn">
-							<?php
-							// お気に入りボタン
-							echo do_shortcode('[favorite_button post_id="" site_id=""]');
-							?>
-						</div>
 						<div class="sht_sns_btns">
 							<?php
 							// ▼ SNSボタンを読み込む
