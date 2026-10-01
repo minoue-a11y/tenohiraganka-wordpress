@@ -33,3 +33,7 @@ wp-config.php
 *.___bak*
 *.bak
 *.backup
+
+# Local development files
+.vscode/
+sync-staging.sh
