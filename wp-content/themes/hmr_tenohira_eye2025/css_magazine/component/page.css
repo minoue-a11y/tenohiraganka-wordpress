@@ -615,3 +615,2220 @@
 #main-contents #main-contents-inner.blog_contents .wp-block-table table th {
   border: none;
 }
+
+/* ========================================
+   MAGAZINE
+   あわせて読みたい記事
+======================================== */
+
+.magazine_related_posts {
+    margin: 48px 0;
+    padding: 32px 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.magazine_related_posts_heading {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 28px;
+    margin-left: 0;
+    color: var(--base-primary-color);
+    font-size: clamp(1.3rem, 0.828721374rem + 1.1450381679vw, 1.6875rem);
+    font-weight: bold;
+    position: relative;
+    padding: 1rem 0;
+    border-bottom: 6px solid var(--base-primary-color);
+}
+
+
+/* 記事一覧 */
+
+.magazine_related_posts_list {
+    display: block;
+}
+
+
+/* 1記事
+   左：画像
+   右：タイトル＋補足文章
+*/
+
+.magazine_related_posts .magazine_related_post {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: start;
+    width: 100%;
+    margin: 0 0 24px;
+    padding: 0 0 24px;
+    border-bottom: 1px solid #eee;
+}
+
+.magazine_related_posts .magazine_related_post:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+
+/* 左：アイキャッチ */
+
+.magazine_related_posts .magazine_related_post_thumbnail {
+    width: 180px;
+    min-width: 180px;
+    margin: 0;
+    padding: 0;
+}
+
+.magazine_related_posts .magazine_related_post_thumbnail a {
+    display: block;
+    width: 100%;
+}
+
+.magazine_related_posts .magazine_related_post_thumbnail img {
+    display: block;
+    width: 100%;
+    height: 110px;
+    margin: 0;
+    object-fit: cover;
+}
+
+
+/* 右：テキスト */
+
+.magazine_related_posts .magazine_related_post_body {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.magazine_related_posts .magazine_related_post_title {
+    margin: 0 0 10px;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.magazine_related_posts .magazine_related_post_title a {
+    text-decoration: none;
+}
+
+.magazine_related_posts .magazine_related_post_excerpt {
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   SP
+======================================== */
+
+@media screen and (max-width: 768px) {
+
+    .magazine_related_posts {
+        margin: 36px 0;
+        padding: 24px 0;
+    }
+
+    .magazine_related_posts_heading {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+
+    .magazine_related_posts .magazine_related_post {
+        display: block;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
+    /* SPでは関連記事のアイキャッチ画像を非表示 */
+    .magazine_related_posts .magazine_related_post_thumbnail {
+        display: none;
+    }
+
+    .magazine_related_posts .magazine_related_post_body {
+        width: 100%;
+    }
+
+    .magazine_related_posts .magazine_related_post_title {
+        margin-bottom: 6px;
+        line-height: 1.5;
+    }
+
+    /* SPでは説明文を小さくする */
+    .magazine_related_posts .magazine_related_post_excerpt {
+        font-size: 0.875rem;
+        line-height: 1.6;
+    }
+}
+
+/* ========================================
+   MAGAZINE
+   タグ別 人気記事ランキング
+======================================== */
+
+#sidesec_ranking .magazine_tag_ranking {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#sidesec_ranking .magazine_tag_ranking_item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 0;
+    padding: 12px 10px;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+#sidesec_ranking .magazine_tag_ranking_item:last-child {
+    border-bottom: none;
+}
+
+#sidesec_ranking .magazine_tag_ranking_number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex: 0 0 24px;
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+
+    margin: 0;
+    padding: 0;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: 1;
+
+    color: #fff;
+    background-color: var(--base-primary-color);
+
+    border-radius: 0;
+    box-sizing: border-box;
+}
+
+#sidesec_ranking .magazine_tag_ranking_link {
+    flex: 1;
+    min-width: 0;
+
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    color: var(--base-primary-color);
+    text-decoration: none;
+}
+
+#sidesec_ranking .magazine_tag_ranking_link:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   CTA-01｜オンライン診療予約
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01 {
+  --cta01-orange: #f5a04a;
+  --cta01-orange-hover: #ed8f36;
+  --cta01-label-blue: #deedff;
+
+  width: 100%;
+  margin: 2em 0;
+
+  color: var(--base-text-color);
+}
+
+
+/* ========================================
+   PC / SP 切り替え
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_pc {
+  display: block;
+}
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_sp {
+  display: none;
+}
+
+
+/* ========================================
+   PC｜CTA全体
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_inner {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 42% 58%;
+
+  width: 100%;
+  min-height: 360px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--grayblue-kei-color);
+  border-radius: 18px;
+
+  background-color: #f7fbff;
+  background-image:
+    url("/wp-content/themes/hmr_tenohira_eye2025/images/cta01-online-consultation-bg-pc.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  box-shadow:
+    0 6px 20px rgba(47, 102, 237, 0.08);
+}
+
+
+/* ========================================
+   PC｜左側ビジュアル
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_visual {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  min-width: 0;
+  min-height: 360px;
+
+  overflow: visible;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_visual_img {
+  position: absolute;
+
+  left: 18px;
+  bottom: 0;
+
+  display: block;
+
+  width: auto;
+  max-width: none;
+
+  height: 95%;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
+
+  object-fit: contain;
+  object-position: left bottom;
+}
+
+
+/* ========================================
+   PC｜右側コンテンツ
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_body {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+
+  padding:
+    24px
+    52px
+    22px
+    10px;
+}
+
+
+/* ========================================
+   共通｜ラベル
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_label {
+  width: fit-content;
+
+  margin: 0 0 10px;
+  padding: 5px 18px;
+
+  border-radius: 999px;
+
+  background:
+    rgba(222, 237, 255, 0.9);
+
+  color:
+    var(--base-primary-color);
+
+  font-size: 0.88rem;
+  font-weight: bold;
+  line-height: 1.5;
+
+  word-break: keep-all;
+}
+
+
+/* ========================================
+   共通｜タイトル
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_title {
+  width: 100%;
+
+  margin: 0 0 10px;
+  padding: 0;
+
+  color:
+    var(--base-text-color);
+
+  font-size:
+    clamp(
+      1.3rem,
+      1.9vw,
+      1.8rem
+    );
+
+  font-weight: bold;
+  line-height: 1.35;
+
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_title span {
+  color:
+    var(--base-primary-color);
+}
+
+
+/* ========================================
+   共通｜説明文
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_text {
+  width: 100%;
+
+  margin: 0 0 18px;
+  padding: 0;
+
+  font-size: 0.93rem;
+  line-height: 1.7;
+
+  word-break: normal;
+}
+
+
+/* ========================================
+   共通｜CTAボタン
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_btn {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+
+  width: 100%;
+
+  margin: 0 0 20px;
+
+  padding:
+    15px
+    20px;
+
+  border-radius: 14px;
+
+  background-color:
+    var(--cta01-orange);
+
+  color: #fff;
+
+  font-size:
+    clamp(
+      1rem,
+      1.45vw,
+      1.2rem
+    );
+
+  font-weight: bold;
+  line-height: 1.4;
+
+  text-align: center;
+  text-decoration: none;
+
+  word-break: keep-all;
+
+  box-shadow:
+    0 5px 12px
+    rgba(185, 106, 37, 0.18);
+
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_btn:link,
+#main-contents #main-contents-inner.blog_contents .blog_cta01_btn:visited {
+  color: #fff;
+
+  text-decoration: none;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_btn:hover {
+  background-color:
+    var(--cta01-orange-hover);
+
+  color: #fff;
+
+  text-decoration: none;
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 7px 16px
+    rgba(185, 106, 37, 0.23);
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_btn:focus-visible {
+  outline:
+    3px solid
+    var(--base-primary-color);
+
+  outline-offset: 3px;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_btn_arrow {
+  flex: 0 0 auto;
+
+  font-size: 1.45em;
+  line-height: 1;
+}
+
+
+/* ========================================
+   PC｜メリット3点
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_merits {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_merits li {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding:
+    0
+    7px;
+
+  color:
+    var(--base-text-color);
+
+  font-size: 0.74rem;
+  font-weight: bold;
+  line-height: 1.4;
+
+  list-style: none;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_merits li:first-child {
+  padding-left: 0;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_merits li:last-child {
+  padding-right: 0;
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_merits li + li {
+  border-left:
+    1px solid
+    var(--grayblue-kei-color);
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_merit_icon {
+  display: block;
+
+  flex:
+    0
+    0
+    34px;
+
+  width: 34px;
+  height: 34px;
+
+  color:
+    var(--base-primary-color);
+}
+
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_merit_icon svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ========================================
+   中間PCサイズ対策
+   769px〜1100px
+======================================== */
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_inner {
+    grid-template-columns: 40% 60%;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_visual_img {
+    left: 12px;
+
+    width: auto;
+    max-width: none;
+
+    height: 95%;
+    max-height: none;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_body {
+    padding:
+      22px
+      34px
+      20px
+      4px;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_title {
+    font-size:
+      clamp(
+        1.2rem,
+        2.15vw,
+        1.55rem
+      );
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_text {
+    font-size: 0.88rem;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_btn {
+    font-size: 1rem;
+
+    padding:
+      13px
+      16px;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_merits li {
+    gap: 5px;
+
+    padding:
+      0
+      5px;
+
+    font-size: 0.68rem;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_merit_icon {
+    flex-basis: 30px;
+
+    width: 30px;
+    height: 30px;
+  }
+
+}
+
+
+/* ========================================
+   SP
+======================================== */
+
+@media screen and (max-width: 768px) {
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_pc {
+    display: none;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp {
+    display: block;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01 {
+    margin:
+      1.5em
+      0;
+  }
+
+
+  /* ========================================
+     SP｜CTA全体
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp_inner {
+    width: 100%;
+
+    overflow: hidden;
+
+    border:
+      1px solid
+      var(--grayblue-kei-color);
+
+    border-radius: 16px;
+
+    background-color: #f7fbff;
+
+    box-shadow:
+      0 5px 16px
+      rgba(47, 102, 237, 0.08);
+  }
+
+
+  /* ========================================
+     SP｜ビジュアル
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp_visual {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp_img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 0;
+    padding: 0;
+
+    object-fit: cover;
+    object-position: center center;
+  }
+
+
+  /* ========================================
+     SP｜本文
+  ======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_sp_body {
+  padding:
+    20px
+    22px
+    20px;
+}
+
+  /* ========================================
+     SP｜ラベル
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp .blog_cta01_label {
+    margin:
+      0
+      auto
+      12px;
+
+    padding:
+      5px
+      16px;
+
+    font-size: 0.82rem;
+
+    text-align: center;
+  }
+
+
+/* ========================================
+   SP｜タイトル
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_sp .blog_cta01_title {
+  width: 100%;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  font-size: 1.5rem;
+  line-height: 1.4;
+
+  text-align: left;
+
+  word-break: normal;
+  overflow-wrap: normal;
+  line-break: strict;
+}
+
+#main-contents #main-contents-inner.blog_contents .blog_cta01_sp .blog_cta01_title span {
+  display: inline;
+
+  color: var(--base-primary-color);
+
+  white-space: normal;
+  word-break: normal;
+}
+
+  /* ========================================
+     SP｜説明文
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp .blog_cta01_text {
+    margin:
+      0
+      0
+      18px;
+
+    font-size: 0.9rem;
+    line-height: 1.75;
+
+    word-break: normal;
+  }
+
+
+  /* ========================================
+     SP｜CTAボタン
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp .blog_cta01_btn {
+    gap: 12px;
+
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+      14px;
+
+    border-radius: 12px;
+
+    font-size:
+      clamp(
+        0.95rem,
+        4.2vw,
+        1.05rem
+      );
+
+    line-height: 1.4;
+  }
+
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp .blog_cta01_btn_arrow {
+    font-size: 1.3em;
+  }
+
+
+  /* ========================================
+     SPではPC用メリット非表示
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta01_sp .blog_cta01_merits {
+    display: none;
+  }
+
+}
+
+
+
+/* ========================================
+   人気記事ランキングページ
+   popular_ranking_top 本文のみ
+======================================== */
+
+.popular_ranking {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 集計説明 */
+.popular_ranking_info {
+    margin: 0 0 28px;
+    padding: 24px 28px;
+    background: #f7f9ff;
+    border: 1px solid #e4ebff;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.popular_ranking_description {
+    margin: 0 0 20px;
+    font-size: 0.9375rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.popular_ranking_conditions {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #dfe7fb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.popular_ranking_condition {
+    margin: 0;
+    padding: 14px 16px;
+    background: #fff;
+    border-right: 1px solid #dfe7fb;
+    box-sizing: border-box;
+}
+
+.popular_ranking_condition:last-child {
+    border-right: 0;
+}
+
+.popular_ranking_condition dt {
+    margin: 0 0 5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #2f66ed;
+}
+
+.popular_ranking_condition dd {
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #263238;
+}
+
+/* カテゴリフィルター */
+.popular_ranking_filter {
+    margin: 0 0 28px;
+}
+
+.popular_ranking_filter_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.popular_ranking_filter_button {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    margin: 0;
+    padding: 8px 18px;
+    border: 1px solid #2f66ed;
+    border-radius: 999px;
+    background: #fff;
+    color: #2f66ed;
+    font-size: 0.875rem;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.popular_ranking_filter_button:hover,
+.popular_ranking_filter_button:focus-visible,
+.popular_ranking_filter_button.is-active {
+    background: #2f66ed;
+    color: #fff;
+    text-decoration: none;
+}
+
+.popular_ranking_current_category {
+    margin: 0 0 20px;
+    padding: 12px 16px;
+    border-radius: 6px;
+    background: #eaf0ff;
+    color: #2f66ed;
+    font-size: 0.9375rem;
+    font-weight: 700;
+}
+
+/* ランキング一覧 */
+.popular_ranking .popular_ranking_list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 0;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+.popular_ranking .popular_ranking_item {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    border: 1px solid #edf0f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(38, 50, 56, 0.05);
+    overflow: hidden;
+    list-style: none !important;
+    box-sizing: border-box;
+}
+
+.popular_ranking .popular_ranking_item::marker {
+    content: "";
+}
+
+.popular_ranking_item_link {
+    position: relative;
+    display: grid;
+    grid-template-columns: 52px 180px minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 18px 58px 18px 18px;
+    color: inherit;
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease;
+}
+
+.popular_ranking_item_link:link,
+.popular_ranking_item_link:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.popular_ranking_item_link:hover {
+    background: #f8faff;
+    color: inherit;
+    text-decoration: none;
+}
+
+.popular_ranking_item_link:focus-visible {
+    outline: 3px solid #2f66ed;
+    outline-offset: -3px;
+}
+
+.popular_ranking_item_link::after {
+    content: "›";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #eaf0ff;
+    color: #2f66ed;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* 順位 */
+.popular_ranking_number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    background: #9da3aa;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.popular_ranking_item:nth-child(-n + 3) .popular_ranking_number {
+    background: #2f66ed;
+}
+
+.popular_ranking_item:nth-child(n + 4) .popular_ranking_number {
+    background: #9da3aa;
+}
+
+.popular_ranking_number_value {
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+}
+
+.popular_ranking_number_label {
+    display: none;
+}
+
+/* アイキャッチ */
+.popular_ranking_thumbnail {
+    width: 180px;
+    min-width: 180px;
+}
+
+.popular_ranking_thumbnail img {
+    display: block;
+    width: 180px;
+    height: 108px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* 記事情報 */
+.popular_ranking_body {
+    min-width: 0;
+}
+
+.popular_ranking_title {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.55;
+}
+
+.popular_ranking_title {
+    color: #1760e8;
+}
+
+.popular_ranking_item_link:hover .popular_ranking_title {
+    text-decoration: underline;
+}
+
+.popular_ranking_excerpt {
+    display: -webkit-box;
+    margin: 0 0 10px;
+    overflow: hidden;
+    color: #444;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.popular_ranking_categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 0;
+}
+
+.popular_ranking_category {
+    display: inline-flex;
+    align-items: center;
+    min-height: 22px;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: #eaf0ff;
+    color: #2f66ed;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.popular_ranking_empty {
+    margin: 24px 0;
+    padding: 24px;
+    border-radius: 8px;
+    background: #f7f9ff;
+    color: #333;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .popular_ranking_info {
+        margin-bottom: 22px;
+        padding: 18px 16px;
+    }
+
+    .popular_ranking_description {
+        margin-bottom: 16px;
+        font-size: 0.875rem;
+    }
+
+    .popular_ranking_conditions {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .popular_ranking_condition {
+        padding: 11px 12px;
+        border-right: 1px solid #dfe7fb;
+        border-bottom: 1px solid #dfe7fb;
+    }
+
+    .popular_ranking_condition:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .popular_ranking_condition:nth-last-child(-n + 2) {
+        border-bottom: 0;
+    }
+
+    .popular_ranking_filter {
+        margin-bottom: 22px;
+    }
+
+    .popular_ranking_filter_list {
+        gap: 6px;
+    }
+
+    .popular_ranking_filter_button {
+        min-height: 34px;
+        padding: 7px 12px;
+        font-size: 0.75rem;
+    }
+
+    .popular_ranking .popular_ranking_list {
+        gap: 10px;
+    }
+
+    .popular_ranking .popular_ranking_item {
+        border-radius: 10px;
+    }
+
+    .popular_ranking_item_link {
+        grid-template-columns: 42px 86px minmax(0, 1fr);
+        column-gap: 10px;
+        padding: 14px 38px 14px 12px;
+    }
+
+    .popular_ranking_item_link::after {
+        right: 8px;
+        width: 26px;
+        height: 26px;
+        font-size: 1.125rem;
+    }
+
+    .popular_ranking_number {
+        width: 38px;
+        height: 38px;
+        border-radius: 5px;
+    }
+
+    .popular_ranking_number_value {
+        font-size: 0.9375rem;
+    }
+
+    .popular_ranking_thumbnail {
+        width: 86px;
+        min-width: 86px;
+    }
+
+    .popular_ranking_thumbnail img {
+        width: 86px;
+        height: 64px;
+        border-radius: 5px;
+    }
+
+    .popular_ranking_title {
+        margin-bottom: 5px;
+        font-size: 0.875rem;
+        line-height: 1.5;
+    }
+
+    .popular_ranking_excerpt {
+        margin-bottom: 7px;
+        font-size: 0.75rem;
+        line-height: 1.55;
+        -webkit-line-clamp: 2;
+    }
+
+    .popular_ranking_category {
+        padding: 2px 7px;
+        font-size: 0.625rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular_ranking_item_link {
+        grid-template-columns: 38px 76px minmax(0, 1fr);
+        column-gap: 8px;
+        padding: 12px 34px 12px 10px;
+    }
+
+    .popular_ranking_number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .popular_ranking_thumbnail {
+        width: 76px;
+        min-width: 76px;
+    }
+
+    .popular_ranking_thumbnail img {
+        width: 76px;
+        height: 58px;
+    }
+
+    .popular_ranking_excerpt {
+        display: none;
+    }
+}
+
+
+/* ========================================
+   人気記事ランキングページ FV override
+   popular_ranking_top 本文のみ
+======================================== */
+
+.popular_ranking_fv {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    align-items: center;
+    gap: 24px;
+    min-height: 180px;
+    margin: 0 0 18px;
+    padding: 12px 8px 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.popular_ranking_fv_copy {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+}
+
+.popular_ranking_fv_title {
+    margin: 0 0 16px;
+    padding: 0;
+    color: #1760e8;
+    background: transparent;
+    border: 0;
+    font-size: clamp(1.8rem, 3vw, 2.65rem);
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: 0.01em;
+}
+
+.popular_ranking_fv_title::before,
+.popular_ranking_fv_title::after {
+    content: none;
+}
+
+.popular_ranking_fv .popular_ranking_description {
+    max-width: 720px;
+    margin: 0;
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.9;
+}
+
+.popular_ranking_fv_visual {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    align-self: stretch;
+    min-width: 0;
+}
+
+.popular_ranking_fv_visual img {
+    display: block;
+    width: min(260px, 100%);
+    height: auto;
+    max-height: 190px;
+    object-fit: contain;
+    object-position: right bottom;
+}
+
+.popular_ranking_info {
+    margin: 0 0 26px;
+    padding: 18px 20px;
+    background: #fff;
+    border: 1px solid #dfe7fb;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(47, 102, 237, 0.06);
+}
+
+.popular_ranking_conditions {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.popular_ranking_condition {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 12px;
+    min-width: 0;
+    margin: 0;
+    padding: 8px 18px;
+    background: transparent;
+    border-right: 1px solid #dfe7fb;
+    box-sizing: border-box;
+}
+
+.popular_ranking_condition:first-child {
+    padding-left: 8px;
+}
+
+.popular_ranking_condition:last-child {
+    padding-right: 8px;
+    border-right: 0;
+}
+
+.popular_ranking_condition_icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+}
+
+.popular_ranking_condition_icon img {
+    display: block;
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.popular_ranking_condition_text {
+    min-width: 0;
+}
+
+.popular_ranking_condition dt {
+    margin: 0 0 4px;
+    color: #2f66ed;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.popular_ranking_condition dd {
+    margin: 0;
+    color: #263238;
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+@media screen and (max-width: 900px) {
+    .popular_ranking_fv {
+        grid-template-columns: minmax(0, 1fr) 210px;
+    }
+
+    .popular_ranking_fv_visual img {
+        width: min(210px, 100%);
+        max-height: 165px;
+    }
+
+    .popular_ranking_condition {
+        grid-template-columns: 36px minmax(0, 1fr);
+        column-gap: 9px;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .popular_ranking_condition_icon {
+        width: 36px;
+        height: 36px;
+        flex-basis: 36px;
+    }
+
+    .popular_ranking_condition_icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .popular_ranking_condition dd {
+        font-size: 0.82rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .popular_ranking_fv {
+        grid-template-columns: minmax(0, 1fr) 120px;
+        gap: 10px;
+        min-height: 130px;
+        margin-bottom: 14px;
+        padding: 8px 0 6px;
+    }
+
+    .popular_ranking_fv_title {
+        margin-bottom: 10px;
+        font-size: clamp(1.45rem, 7vw, 2rem);
+        line-height: 1.35;
+    }
+
+    .popular_ranking_fv .popular_ranking_description {
+        font-size: 0.82rem;
+        line-height: 1.7;
+    }
+
+    .popular_ranking_fv_visual {
+        align-items: flex-start;
+    }
+
+    .popular_ranking_fv_visual img {
+        width: 120px;
+        max-height: 120px;
+        object-position: right top;
+    }
+
+    .popular_ranking_info {
+        margin-bottom: 20px;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .popular_ranking_conditions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .popular_ranking_condition,
+    .popular_ranking_condition:first-child,
+    .popular_ranking_condition:last-child {
+        grid-template-columns: 34px minmax(0, 1fr);
+        gap: 8px;
+        padding: 10px;
+        border-right: 1px solid #dfe7fb;
+        border-bottom: 1px solid #dfe7fb;
+    }
+
+    .popular_ranking_condition:nth-child(2n) {
+        border-right: 0;
+    }
+
+    .popular_ranking_condition:nth-last-child(-n + 2) {
+        border-bottom: 0;
+    }
+
+    .popular_ranking_condition_icon {
+        width: 34px;
+        height: 34px;
+        flex-basis: 34px;
+    }
+
+    .popular_ranking_condition_icon img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .popular_ranking_condition dt {
+        font-size: 0.68rem;
+    }
+
+    .popular_ranking_condition dd {
+        font-size: 0.76rem;
+        line-height: 1.45;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .popular_ranking_fv {
+        grid-template-columns: minmax(0, 1fr) 92px;
+    }
+
+    .popular_ranking_fv_visual img {
+        width: 92px;
+        max-height: 100px;
+    }
+
+    .popular_ranking_condition,
+    .popular_ranking_condition:first-child,
+    .popular_ranking_condition:last-child {
+        grid-template-columns: 30px minmax(0, 1fr);
+        padding: 9px 8px;
+    }
+
+    .popular_ranking_condition_icon {
+        width: 30px;
+        height: 30px;
+        flex-basis: 30px;
+    }
+
+    .popular_ranking_condition_icon img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+
+/* ========================================
+   popular_ranking_top｜SPカテゴリボタン調整
+   PCは既存サイズを維持
+======================================== */
+@media screen and (max-width: 768px) {
+    #main-contents .popular_ranking_filter_button {
+        min-height: 34px;
+        padding: 6px 11px;
+        font-size: 0.8125rem !important;
+        line-height: 1.35;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #main-contents .popular_ranking_filter_button {
+        padding: 6px 10px;
+        font-size: 0.75rem !important;
+    }
+}
+
+/* ========================================
+   popular_ranking_top｜SPランキング一覧 左右余白調整
+======================================== */
+@media screen and (max-width: 768px) {
+
+    #main-contents .popular_ranking {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+
+    #main-contents .popular_ranking ol.popular_ranking_list {
+        width: 100%;
+        margin: 0;
+        padding: 0 !important;
+        padding-inline-start: 0 !important;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    #main-contents .popular_ranking .popular_ranking_item {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
+    }
+}
+
+/* ========================================
+   CTA-04｜サービス案内（オンライン診療）
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04 {
+  display: block;
+  width: 100%;
+  margin: 2em 0;
+  color: var(--base-text-color);
+  text-decoration: none;
+}
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04:link,
+#main-contents #main-contents-inner.blog_contents .blog_cta04:visited {
+  color: var(--base-text-color);
+  text-decoration: none;
+}
+
+
+/* ========================================
+   PC｜CTA全体
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_inner {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 44% 56%;
+
+  width: 100%;
+  min-height: 250px;
+
+  overflow: hidden;
+
+  border: 1px solid var(--grayblue-kei-color);
+  border-radius: 16px;
+
+  background-color: #f7fbff;
+
+  background-image:
+    url("/wp-content/themes/hmr_tenohira_eye2025/images/cta04-online-consultation-bg-pc.png");
+
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  /* PCは現状維持 */
+  background-size: auto;
+
+  box-shadow:
+    0 4px 14px rgba(47, 102, 237, 0.07);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   PC｜hover
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents
+.blog_cta04:hover
+.blog_cta04_inner {
+  border-color: rgba(47, 102, 237, 0.4);
+
+  box-shadow:
+    0 7px 20px rgba(47, 102, 237, 0.12);
+
+  transform: translateY(-1px);
+}
+
+
+/* ========================================
+   PC｜左側ビジュアル
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_visual {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+
+  min-width: 0;
+  min-height: 250px;
+
+  overflow: visible;
+}
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_visual_img {
+  position: absolute;
+
+  left: -10px;
+  bottom: 0;
+
+  display: block;
+
+  width: auto;
+  max-width: none;
+
+  height: 100%;
+  max-height: none;
+
+  margin: 0;
+  padding: 0;
+
+  object-fit: contain;
+  object-position: left bottom;
+}
+
+
+/* ========================================
+   PC｜右側本文
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_body {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-width: 0;
+
+  padding:
+    26px
+    58px
+    26px
+    8px;
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   PC｜サービスラベル
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_service {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  width: 100%;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  color: var(--base-primary-color);
+
+  font-size: 0.95rem;
+  font-weight: bold;
+  line-height: 1.5;
+
+  word-break: normal;
+}
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_service_icon {
+  display: block;
+
+  flex: 0 0 32px;
+
+  width: 32px;
+  height: 32px;
+
+  color: var(--base-primary-color);
+}
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_service_icon svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ========================================
+   PC｜タイトル
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_title {
+  width: 100%;
+
+  margin: 0 0 12px;
+  padding: 0;
+
+  color: var(--base-text-color);
+
+  font-size:
+    clamp(
+      1.45rem,
+      2.1vw,
+      1.9rem
+    );
+
+  font-weight: bold;
+  line-height: 1.4;
+
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+
+
+/* ========================================
+   PC｜説明文
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_text {
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  color: var(--base-text-color);
+
+  font-size: 0.95rem;
+  line-height: 1.8;
+
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+
+/* ========================================
+   PC｜右矢印
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04_arrow {
+  position: absolute;
+  z-index: 3;
+
+  top: 50%;
+  right: 22px;
+
+  color: var(--base-primary-color);
+
+  font-size: 3rem;
+  font-weight: normal;
+  line-height: 1;
+
+  transform: translateY(-50%);
+
+  transition:
+    transform 0.2s ease;
+}
+
+#main-contents #main-contents-inner.blog_contents
+.blog_cta04:hover
+.blog_cta04_arrow {
+  transform: translate(4px, -50%);
+}
+
+
+/* ========================================
+   focus
+======================================== */
+
+#main-contents #main-contents-inner.blog_contents .blog_cta04:focus-visible {
+  outline: 3px solid var(--base-primary-color);
+  outline-offset: 4px;
+  border-radius: 16px;
+}
+
+
+/* ========================================
+   中間PC
+   769px〜1100px
+======================================== */
+
+@media screen and (min-width: 769px) and (max-width: 1100px) {
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_inner {
+    grid-template-columns: 43% 57%;
+    min-height: 220px;
+
+    background-size: auto;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_visual {
+    min-height: 220px;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_visual_img {
+    left: -8px;
+    height: 98%;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_body {
+    padding:
+      22px
+      50px
+      22px
+      6px;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_service {
+    gap: 7px;
+    margin-bottom: 8px;
+    font-size: 0.82rem;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_service_icon {
+    flex-basis: 28px;
+
+    width: 28px;
+    height: 28px;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_title {
+    margin-bottom: 8px;
+
+    font-size:
+      clamp(
+        1.2rem,
+        2vw,
+        1.55rem
+      );
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_text {
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_arrow {
+    right: 15px;
+    font-size: 2.5rem;
+  }
+}
+
+
+/* ========================================
+   SP
+======================================== */
+
+@media screen and (max-width: 768px) {
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04 {
+    width: 100%;
+    margin: 1.5em 0;
+  }
+
+
+  /* ========================================
+     SP｜CTA全体
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_inner {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    min-height: 0;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    border: 1px solid var(--grayblue-kei-color);
+    border-radius: 14px;
+
+    background-color: #f7fbff;
+
+    background-image:
+      url("/wp-content/themes/hmr_tenohira_eye2025/images/cta04-online-consultation-bg-pc.png") !important;
+
+    background-repeat: no-repeat !important;
+
+    /*
+     * PC用背景画像をSPで縦方向に拡大。
+     * 画像内に含まれる白い領域をカード外へ追い出す。
+     */
+    background-size: auto 160% !important;
+
+    background-position: center center !important;
+
+    box-shadow:
+      0 4px 14px rgba(47, 102, 237, 0.07);
+
+    box-sizing: border-box;
+  }
+
+
+  /* ========================================
+     SP｜上部ビジュアル
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_visual {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+    height: 230px;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_visual_img {
+    position: absolute;
+
+    left: 50%;
+    bottom: 0;
+
+    display: block;
+
+    width: auto;
+    max-width: none;
+
+    height: 100%;
+    max-height: none;
+
+    margin: 0;
+    padding: 0;
+
+    transform: translateX(-50%);
+
+    object-fit: contain;
+    object-position: center bottom;
+  }
+
+
+  /* ========================================
+     SP｜本文
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_body {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+    margin: 0;
+
+    padding:
+      20px
+      22px
+      28px;
+
+    /* 本文エリアのみ白地 */
+    background: #ffffff;
+
+    box-sizing: border-box;
+  }
+
+
+  /* ========================================
+     SP｜サービスラベル
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_service {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    width: 100%;
+
+    margin: 0 0 12px;
+    padding: 0;
+
+    color: var(--base-primary-color);
+
+    font-size: 0.82rem;
+    font-weight: bold;
+    line-height: 1.45;
+
+    word-break: normal;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_service_icon {
+    display: block;
+
+    flex: 0 0 28px;
+
+    width: 28px;
+    height: 28px;
+  }
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_service_icon svg {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+  }
+
+
+  /* ========================================
+     SP｜タイトル
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_title {
+    width: 100%;
+
+    margin: 0 0 12px;
+    padding: 0;
+
+    color: var(--base-text-color);
+
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.4;
+
+    word-break: normal;
+    overflow-wrap: normal;
+    line-break: strict;
+  }
+
+
+  /* ========================================
+     SP｜説明文
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_text {
+    width: 100%;
+
+    margin: 0;
+
+    padding:
+      0
+      32px
+      0
+      0;
+
+    color: var(--base-text-color);
+
+    font-size: 0.9rem;
+    line-height: 1.75;
+
+    word-break: normal;
+    overflow-wrap: normal;
+    line-break: strict;
+
+    box-sizing: border-box;
+  }
+
+
+  /* ========================================
+     SP｜右矢印
+  ======================================== */
+
+  #main-contents #main-contents-inner.blog_contents .blog_cta04_arrow {
+    position: absolute;
+
+    z-index: 3;
+
+    top: auto;
+
+    right: 18px;
+    bottom: 22px;
+
+    color: var(--base-primary-color);
+
+    font-size: 2rem;
+    line-height: 1;
+
+    transform: none;
+  }
+
+  #main-contents #main-contents-inner.blog_contents
+  .blog_cta04:hover
+  .blog_cta04_arrow {
+    transform: translateX(3px);
+  }
+}

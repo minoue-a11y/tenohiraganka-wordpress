@@ -327,6 +327,12 @@ function hmr_s_base_gtn_scripts()
 {
 	wp_enqueue_style('hmr___s_base_gtn_base-gtn-style', get_stylesheet_uri());
 
+	// マガジン用 page.css は更新日時をバージョンとして使用し、キャッシュを自動更新
+	$magazine_page_css_path = get_template_directory() . '/css_magazine/component/page.css';
+	$magazine_page_css_version = file_exists($magazine_page_css_path)
+		? filemtime($magazine_page_css_path)
+		: '20260303';
+
 	// == add
 	wp_enqueue_script('hmr_custom-moveTomin', get_template_directory_uri() . '/js/moveTo.min.js', array('jquery'), '202509001');
 	wp_enqueue_script('hmr_custom-pagetopscroll', get_template_directory_uri() . '/js/pagetopscroll.js', array('jquery'), '202509001');
@@ -358,10 +364,18 @@ function hmr_s_base_gtn_scripts()
 			// 本体用：お知らせsingle
 			wp_enqueue_style('hmr_custom-design_css', get_template_directory_uri() . '/css/style_design.css', "", '202509001', 'all');
 			wp_enqueue_style('hmr_custom-page_css', get_template_directory_uri() . '/css/component/page.css', "", '202509001', 'all');
-		} elseif (is_page(array('popular_ranking', 'page_favorites', 'eye_symptoms', 'eye_diseases', 'eye_selfcare', 'eye_online_shinryo', 'column_newinfo'))) {
-			// マガジン用固定ページ
+		} elseif (is_page('popular_ranking_top')) {
+			// 人気記事ランキングページ
+			// 通常サイト用CSSでヘッダー・フッター・共通レイアウトを維持
+			wp_enqueue_style('hmr_custom-design_css', get_template_directory_uri() . '/css/style_design.css', "", '202509001', 'all');
+			wp_enqueue_style('hmr_custom-page_css', get_template_directory_uri() . '/css/component/page.css', "", '202509001', 'all');
+
+			// ランキングページ専用のマガジンCSSを追加
+			wp_enqueue_style('hmr_custom-page_magazine_css', get_template_directory_uri() . '/css_magazine/component/page.css', array('hmr_custom-page_css'), $magazine_page_css_version, 'all');
+		} elseif (is_page(array('page_favorites', 'eye_symptoms', 'eye_diseases', 'eye_selfcare', 'eye_online_shinryo', 'column_newinfo'))) {
+			// その他のマガジン用固定ページ
 			wp_enqueue_style('hmr_custom-design_magazine_css', get_template_directory_uri() . '/css_magazine/style_design.css', "", '202509001', 'all');
-			wp_enqueue_style('hmr_custom-page_magazine_css', get_template_directory_uri() . '/css_magazine/component/page.css', "", '202509001', 'all');
+			wp_enqueue_style('hmr_custom-page_magazine_css', get_template_directory_uri() . '/css_magazine/component/page.css', "", $magazine_page_css_version, 'all');
 		} elseif (is_page()) {
 			// 本体用固定ページ
 			wp_enqueue_style('hmr_custom-design_css', get_template_directory_uri() . '/css/style_design.css', "", '202509001', 'all');
@@ -376,7 +390,7 @@ function hmr_s_base_gtn_scripts()
 			if (!empty($post_types) && (in_array('post', (array)$post_types) || $post_types === 'post')) {
 				// searchform-post_only.phpからの検索（投稿のみ）
 				wp_enqueue_style('hmr_custom-design_magazine_css', get_template_directory_uri() . '/css_magazine/style_design.css', "", '202509001', 'all');
-				wp_enqueue_style('hmr_custom-page_magazine_css', get_template_directory_uri() . '/css_magazine/component/page.css', "", '20260303', 'all');
+				wp_enqueue_style('hmr_custom-page_magazine_css', get_template_directory_uri() . '/css_magazine/component/page.css', "", $magazine_page_css_version, 'all');
 			} else {
 				// searchform.phpからの検索（全体検索）
 				wp_enqueue_style('hmr_custom-design_css', get_template_directory_uri() . '/css/style_design.css', "", '202509001', 'all');
@@ -385,7 +399,7 @@ function hmr_s_base_gtn_scripts()
 		} elseif (is_single() || is_category() || is_tag() || is_author() || is_date() || is_archive()) {
 			// 投稿・投稿アーカイブ
 			wp_enqueue_style('hmr_custom-design_magazine_css', get_template_directory_uri() . '/css_magazine/style_design.css', "", '202509001', 'all');
-			wp_enqueue_style('hmr_custom-page_magazine_css', get_template_directory_uri() . '/css_magazine/component/page.css', "", '20260303', 'all');
+			wp_enqueue_style('hmr_custom-page_magazine_css', get_template_directory_uri() . '/css_magazine/component/page.css', "", $magazine_page_css_version, 'all');
 		} else {
 			wp_enqueue_style('hmr_custom-design_css', get_template_directory_uri() . '/css/style_design.css', "", '202509001', 'all');
 			wp_enqueue_style('hmr_custom-page_css', get_template_directory_uri() . '/css/component/page.css', "", '202509001', 'all');
@@ -751,3 +765,159 @@ function custom_archive_title( $title ){
 add_filter( 'get_the_archive_title', 'custom_archive_title', 10 );
 
 */
+
+/**
+ * 人気記事ランキング
+ */
+// 設置漏れでサイト全体が停止しないよう、存在を確かめてから読み込む
+if (file_exists(get_template_directory() . '/inc/popular-ranking.php')) {
+	require_once get_template_directory() . '/inc/popular-ranking.php';
+}
+
+
+// Yoast SEOのタイトルに「2ページ目」を付与する
+add_filter( 'wpseo_title', function( $title ) {
+    $paged = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' );
+    if ( $paged > 1 && ( is_archive() || is_home() ) ) {
+        // 「 - 2ページ目」として末尾に追加する例
+        $title .= " - {$paged}ページ目";
+    }
+    return $title;
+}, 999 );
+
+
+/**
+ * マガジン記事に監修者の構造化データを追加する
+ *
+ * ACFフィールド：
+ * - magazine_reviewer_name
+ * - magazine_reviewer_url
+ *
+ * 監修者名が設定されている記事のみ、
+ * PersonとreviewedByを追加します。
+ */
+function hmr_add_reviewer_to_magazine_schema(
+	$graph,
+	$context
+) {
+	if (! is_singular('post')) {
+		return $graph;
+	}
+
+	// ACFが無効な場合は何もしない
+	if (! function_exists('get_field')) {
+		return $graph;
+	}
+
+	$post_id = get_queried_object_id();
+
+	$path = wp_parse_url(
+		get_permalink($post_id),
+		PHP_URL_PATH
+	);
+
+	// /magazine/配下の記事だけを対象にする
+	if (
+		! is_string($path)
+		|| strpos($path, '/magazine/') === false
+	) {
+		return $graph;
+	}
+
+	$reviewer_name = sanitize_text_field(
+		get_field(
+			'magazine_reviewer_name',
+			$post_id
+		)
+	);
+
+	$reviewer_url = esc_url_raw(
+		get_field(
+			'magazine_reviewer_url',
+			$post_id
+		)
+	);
+
+	// 監修者名が未入力の場合は何も追加しない
+	if ($reviewer_name === '') {
+		return $graph;
+	}
+
+	/*
+	 * 同じ監修者は、複数の記事でも
+	 * 同じPersonとして認識できるIDにする
+	 */
+	$reviewer_id = home_url(
+		'/#/schema/person/reviewer-' .
+		hash(
+			'sha256',
+			home_url('/') . '|' . $reviewer_name
+		)
+	);
+
+	$article_found = false;
+
+	/*
+	 * ArticleまたはBlogPostingに
+	 * reviewedByを追加
+	 */
+	foreach ($graph as &$piece) {
+		if (! isset($piece['@type'])) {
+			continue;
+		}
+
+		$types = (array) $piece['@type'];
+
+		if (
+			in_array('Article', $types, true)
+			|| in_array('BlogPosting', $types, true)
+		) {
+			$piece['reviewedBy'] = array(
+				'@id' => $reviewer_id,
+			);
+
+			$article_found = true;
+		}
+	}
+
+	unset($piece);
+
+	// 対象となる記事Schemaがなければ追加しない
+	if (! $article_found) {
+		return $graph;
+	}
+
+	// 同じPersonがすでに存在していれば追加しない
+	foreach ($graph as $piece) {
+		if (
+			isset($piece['@id'])
+			&& $piece['@id'] === $reviewer_id
+		) {
+			return $graph;
+		}
+	}
+
+	/*
+	 * 監修者をPersonとしてSchemaへ追加
+	 */
+	$reviewer_person = array(
+		'@type'    => 'Person',
+		'@id'      => $reviewer_id,
+		'name'     => $reviewer_name,
+		'jobTitle' => '眼科医',
+	);
+
+	if ($reviewer_url !== '') {
+		$reviewer_person['url'] = $reviewer_url;
+	}
+
+	$graph[] = $reviewer_person;
+
+	return $graph;
+}
+add_filter(
+	'wpseo_schema_graph',
+	'hmr_add_reviewer_to_magazine_schema',
+	99,
+	2
+);

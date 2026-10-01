@@ -9,17 +9,25 @@ get_header();
 ?>
 
 
-<div id="main-contents">
+<main
+    id="main-contents"
+    <?php if (is_page('popular_ranking_top')) : ?>
+        class="main-contents-popular-ranking"
+    <?php endif; ?>
+>
+
 	<?php
 	while (have_posts()) :
 		the_post();
 	?>
 
-		<header class="entry-title">
-			<?php
-			the_title('<h2 class="entry-title">', '</h2>');
-			?>
-		</header>
+		<?php if (! is_page('popular_ranking_top')) : ?>
+			<header class="entry-title">
+				<?php
+					the_title('<h2 class="entry-title">', '</h2>');
+				?>
+			</header>
+		<?php endif; ?>
 
 		<?php
 		the_content();
