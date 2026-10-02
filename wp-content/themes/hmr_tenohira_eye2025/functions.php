@@ -921,3 +921,60 @@ add_filter(
 	99,
 	2
 );
+
+/**
+ * MAGAZINE配下のカテゴリー・タグ一覧の記事数に応じて robots を制御
+ *
+ * - 該当記事数 0〜1件：noindex, follow
+ * - 該当記事数 2件以上：既存のrobots設定を維持
+ */
+function tenohira_archive_robots_by_post_count($robots)
+{
+    if (is_admin()) {
+        return $robots;
+    }
+
+    // カテゴリー・タグ一覧のみ対象
+    if (! is_category() && ! is_tag()) {
+        return $robots;
+    }
+
+    // /magazine/ 配下のみ対象
+    $request_uri = isset($_SERVER['REQUEST_URI'])
+        ? wp_unslash($_SERVER['REQUEST_URI'])
+        : '';
+
+    $path = wp_parse_url($request_uri, PHP_URL_PATH);
+
+    if (
+        ! is_string($path)
+        || strpos($path, '/magazine/') !== 0
+    ) {
+        return $robots;
+    }
+
+    global $wp_query;
+
+    if (! isset($wp_query->found_posts)) {
+        return $robots;
+    }
+
+    $found_posts = (int) $wp_query->found_posts;
+
+    // 0〜1記事なら noindex, follow
+    if ($found_posts <= 1) {
+        $robots['index']   = false;
+        $robots['noindex'] = true;
+        $robots['follow']  = true;
+    }
+
+    // 2記事以上は既存設定を維持
+    return $robots;
+}
+
+add_filter(
+    'wpseo_robots_array',
+    'tenohira_archive_robots_by_post_count',
+    20
+);
+
